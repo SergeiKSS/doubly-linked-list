@@ -35,7 +35,16 @@ class LinkedList {
         return curentNode.data;
     }
 
-    insertAt(index, data) {}
+    insertAt(index, data) {
+        var curentNode = this._head,
+            length = this.length,
+            count = 0;
+        while (count < index){
+            curentNode = curentNode.next;
+            count++;
+        }
+        return curentNode.data = data;
+    }
 
     isEmpty() {}
 
