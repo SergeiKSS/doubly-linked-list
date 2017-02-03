@@ -7,11 +7,22 @@ class LinkedList {
         this._tail=null;
     }
 
-    append(data) {}
+    append(data) {
+        var node = new Node(data);
+        if (this.length){
+            this._tail.next = node;
+            node.prev = this._tail;
+            this._tail = node;
+        } else{
+            this._head = node;
+            this._tail = node;
+        }
+        this.length++;
+    }
 
-    head() {}
+    head() {return this._head.data;}
 
-    tail() {}
+    tail() {return this._tail.data;}
 
     at(index) {}
 
