@@ -24,7 +24,16 @@ class LinkedList {
 
     tail() {return this._tail.data;}
 
-    at(index) {}
+    at(index) {
+        var curentNode = this._head,
+            length = this.length,
+            count = 0;
+        while (count < index){
+            curentNode = curentNode.next;
+            count++;
+        }
+        return curentNode.data;
+    }
 
     insertAt(index, data) {}
 
