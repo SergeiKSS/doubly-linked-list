@@ -90,7 +90,24 @@ class LinkedList {
         }
     }
 
-    indexOf(data) {}
+    indexOf(data) {
+        var curentNode = this._head,
+            length = this.length,
+            count = 0,
+            search = false;
+        while (count < length){
+            if (curentNode.data===data)
+                {
+                    search=true;
+                    break;
+                }
+            curentNode = curentNode.next;
+            count++;
+        }
+        if (search)
+            {return count;}
+        else{return -1;}
+    }
 }
 
 module.exports = LinkedList;
