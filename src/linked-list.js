@@ -72,7 +72,23 @@ class LinkedList {
         curentNode.prev.next = curentNode.next;
     }
 
-    reverse() {}
+    reverse() {
+        var node = new Node(this._tail.data),
+            length = this.length,
+            count = 1;
+            node.next = this._tail.prev;
+            node.prev = this._tail.next;
+            this._tail.data = this._head.data;
+            this._head = node;
+
+        while (count < length){
+            var temp = node.next;
+            temp.next = temp.prev;
+            temp.prev = node;
+            node = temp;
+            count++;
+        }
+    }
 
     indexOf(data) {}
 }
